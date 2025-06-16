@@ -289,7 +289,6 @@ Hierarchic output such as those from GO term functional annotation can be repres
 
 #### Krona plot visualization 
 Later on an ad-hoc container for this, but today wen will suffer a bit... 
-First install miniconda [conda link](https://docs.conda.io/projects/conda/en/stable/user-guide/install/linux.html)
 ```bash
 # create conda environment and install dependancies
 $ conda create -n krona python=3.12.2
