@@ -64,7 +64,7 @@ what makes the difference here is the completeness (in term of phylogenetic brea
 Many tool and database with annotated genes/genes families are available to perform functional annotation. Also many of these databases have their own integrated tool to perform annotation (e.g. EggNOG and EggNOG mapper) and web-servers for quick search, but: 
 - They do not necessarily "speak the same language": different gene identifiers, organization and hierarchy of the database and targeted feature (e.g. full coding sequence, domains)
 - They do not cover necessarily the same set of genes
-- Lack of annotation for a relevant fraction of genes outside core metabolism (especially in non-model organisms)
+- Lack of annotation for a relevant fraction of genes outside core metabolism (in non-model organisms)
 
 Despite the plethora of different accession number format adopted by for different databases, there is a good interchange  among databases, which also report the accession and the classification (e.g. GO terms) of other relevant databases for the same protein.**
 
