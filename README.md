@@ -150,6 +150,7 @@ A collecion of computationally predicted (and curated) metabolic pathways and op
 ![yeast](images/yeast_met.png)
 Cellular metabolism of *S. cerevisiae*
 
+
 #### 2.2 Gene Ontology
 Genes can be analyzed at different levels: 
 - Single gene (sequence, function) 
