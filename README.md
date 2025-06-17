@@ -167,7 +167,7 @@ These terms are in relation each other in a directed acyclic graph and they are 
 - **Molecular function**
 
 
-![GOgraph](go_grapg.png)
+![GOgraph](images/go_grapg.png)
 
 
 ### 3.  Annotation: a case study using cyanobacteria
