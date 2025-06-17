@@ -8,7 +8,6 @@ Github URL:[https://github.com/claudioametrano/functional_annotation_db](https:/
 - ncbi datasets
 - Prokka
 - Eggnog
-- ...
 
 ### Software required (locally)
 - a fasta file reader (MEGA, Aliview, Jalview, Bioedit ...)
@@ -26,12 +25,12 @@ $ srun --mem=4G --ntasks=4 --cpus-per-task=1 --time=10:00:00 --pty bash
 
 Download this repository:
 ```bash
-$ git clone https://github.com/claudioametrano/metab_metag_db.git
+$ git clone https://github.com/claudioametrano/functional_annotation_db.git
 ```
 
 Rename the folder containing the results, so you won't overwrite it running the analyses of this tutorial, and create a new results folder
 ```bash
-$ cd metab_metag_db
+$ cd functional_annotation_db/
 $ mv results results_backup  
 $ mkdir results
 ```
@@ -57,8 +56,8 @@ We will focus here on functional annotation, displaying relevant database and so
 ![func. annot.](images/functional_annot.png)
 from [Del Angel et al., 2018](https://pmc.ncbi.nlm.nih.gov/articles/PMC5850084/)
 
-Some of the method are not that different from the one you applied in day 1 and 2 (BLAST),
-what makes the difference here is the completeness (in term of phylogenetic breadth) and accuracy of the annotations stored in databases, also in term of delimited orthogroup.
+Some of the method are not that different from the one you applied in day 1 and 2 (e.g. BLAST),
+what makes the difference here is the completeness (in term of phylogenetic breadth) and accuracy of the annotations stored in databases, also in term of delimited orthogroups.
 
 ### Database and tools for functional annotation
 Many tool and database with annotated genes/genes families are available to perform functional annotation. Also many of these databases have their own integrated tool to perform annotation (e.g. EggNOG and EggNOG mapper) and web-servers for quick search, but: 
@@ -66,7 +65,7 @@ Many tool and database with annotated genes/genes families are available to perf
 - They do not cover necessarily the same set of genes
 - Lack of annotation for a relevant fraction of genes outside core metabolism (in non-model organisms)
 
-Despite the plethora of different accession number format adopted by for different databases, there is a good interchange  among databases, which also report the accession and the classification (e.g. GO terms) of other relevant databases for the same protein.**
+Despite the plethora of different accession number standards adopted by different databases, there is a good interchange among databases, which also report the accession and the classification of other relevant databases for the same protein.**
 
 ### Relevant resources
 
@@ -84,6 +83,7 @@ Despite the plethora of different accession number format adopted by for differe
 | **OrthoDB** v12                         | 162 M genes from 5 827 euks + 18 158 proks + 7 962 viruses         | [www.orthodb](https://www.orthodb.org)     | Ortholog groups at multiple phylogenetic depths; Supplies lineage datasets for **BUSCO**                                      |
 | Protein Data Bank (PBD)                 | ~240000 structures; ~1M computed structures                        | [pdb](https://www.rcsb.org/pdb/)           | Since 1971 the reference for protein structure, and one of the oldest biological DB                                           |
 | **AlphaFold ** (AlphaFold Server/API)   | > 214 M predicted 3-D structures                                   | [alphafold](https://alphafold.ebi.ac.uk)   | Structure-based; function clues for “hypothetical” proteins                                                                   |
+| **Carbohydrate-Active enZYmes Database **    | > 214 M predicted 3-D structures                                   | [Cazy](https://www.cazy.org/)   | Specialized database for enzymes that catalyze reaction involving, oligo- and polysaccharides                                      |
 
 ![aa](images/aa.png)
 from [here](https://www.compoundchem.com/2014/09/16/aminoacids/)
