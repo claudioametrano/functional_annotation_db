@@ -350,7 +350,7 @@ Parsing the annotation files:
 **B.**
 Verify if all these Cyanobacteria have Phycobilisomes (protein complexes containing accessory pigments)
 
-#### 4 Enrichment analysis application: Transcriptomics
+### 4 Enrichment analysis application: Transcriptomics
 In addition to their descriptive use in comparative genomics (between different species/taxa), a common real-world use of these cellular function summaries is to identify differences between experimental conditions (for the same organism). The enrichment analysis of GO  terms (or pathways) performed on differentially expressed genes (significantly Up or Down regulated) in transcriptomics studies, helps to summarize and reveal which parts of cellular metabolism responded to a specific condition (e.g. temperature changes, drug exposure, pollutant stress), in comparison to the control sample.
 
 Example of enrichment analysis with  [g:Profiler](https://biit.cs.ut.ee/gprofiler/gost), provide a list of differentially expressed genes, and obtain which GO and pathway are significantly enriched.
