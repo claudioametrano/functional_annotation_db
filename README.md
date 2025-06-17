@@ -181,11 +181,20 @@ Why Cyanobacteria:
 | Synechocystis sp. PCC 6803* (GCF_000009725.1)    | Facultative heterotroph, freshwater | 3.6 Mb      |
 | *Prochlorococcus marinus MED4* (GCF_000011465.1) | Ultra-oligotrophic, marine          | 1.66 Mb     |
 | *Nostoc sp. PCC 7120* (GCF_000009705.1)          | Filamentous; freshwater             | 7.2 Mb      |
-#### 3.1 Assembly download
+
+#### 3.1 Assembly download (Already available in `data/`)
 ```bash
 $ singularity pull https://depot.galaxyproject.org/singularity/ncbi-datasets-cli:14.26.0
 $ singularity exec ncbi-datasets-cli:14.26.0 datasets download genome accession GCF_000009725.1 GCF_000011465.1 GCF_000009705.1 --include genome
 ```
+or
+
+```bash
+$ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/009/725/GCF_000009725.1_ASM972v1/GCF_000009725.1_ASM972v1_genomic.fna.gz
+$ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/011/465/GCF_000011465.1_ASM1146v1/GCF_000011465.1_ASM1146v1_genomic.fna.gz
+$ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/009/705/GCF_000009705.1_ASM970v1/GCF_000009705.1_ASM970v1_genomic.fna.gz
+```
+
 
 #### 3.2 Prokka:  rapid prokaryotic genome annotation
 Prokariotic genome assembly are the easiest, fastest to annotate, given their simpler gene structure and compact genomes. [Prokka Github](https://github.com/tseemann/prokka#prokka-rapid-prokaryotic-genome-annotation)
@@ -196,11 +205,12 @@ $ singularity pull https://depot.galaxyproject.org/singularity/prokka:1.14.6--pl
 ```
 
 ```bash
-$ singularity exec prokka\:1.14.6--pl5321hdfd78af_5 prokka --outdir results/Synechocystis_GCF_000009725.1 --prefix Synechocystis --cpu 16 ./data/GCF_000009725.1_ASM972v1_genomic.fna 
+$ singularity exec prokka\:1.14.6--pl5321hdfd78af_5 prokka --outdir results/Synechocystis_GCF_000009725.1 --prefix Synechocystis --cpu 1 ./data/GCF_000009725.1_ASM972v1_genomic.fna 
 ```
+
 run the same for the other two samples (adjust names!) ...**or loop**, as manual repeated steps are prone to mistakes! NO big deal with three samples though.
 
-Runtime example: Synechocystis Prokka runtime: 12.32 minutes on 16 cores of Intel(R) Xeon(R) Gold 6132 CPU @ 2.60GHz
+**Runtime example: Synechocystis Prokka runtime: 12.32 minutes on 16 cores of Intel(R) Xeon(R) Gold 6132 CPU @ 2.60GHz**
 
 ##### 3.2.1 Prokka output
 To make sense of the results two things are always useful when you run complex pipelines
