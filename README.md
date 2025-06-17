@@ -329,11 +329,11 @@ If "krona" conda environments is already there then...
 $ conda activate krona
 ```
 
-# get the GO term db
+Get the GO term db
 ```bash
 $ wget http://current.geneontology.org/ontology/go-basic.obo
 ``` 
-# launch this script for each of the eggnog xlsx output files
+Launch this script for each of the eggnog xlsx output files
 ```bash
 $ python egg2krona_go.py ./results/eggnog_annotation/synechocystis.emapper.annotations.xlsx --obo go-basic.obo --out ./results/eggnog_annotation/krona_go_synecho.html
 ```
