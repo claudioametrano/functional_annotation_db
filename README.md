@@ -166,6 +166,10 @@ These terms are in relation each other in a directed acyclic graph and they are 
 - **Cellular components**
 - **Molecular function**
 
+
+![GOgraph](go_grapg.png)
+
+
 ### 3.  Annotation: a case study using cyanobacteria
 Why Cyanobacteria:
 - Compact genomes
