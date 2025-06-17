@@ -227,9 +227,13 @@ Open one of the report
 $ less results/Synechocystis_GCF_000009725.1/Synechocystis.tsv 
 ```
 **Locus_tag**: name of the feature in Prokka
+
 **ftype**: type of feature
+
 **lenghth_bp**
+
 **gene**: gene name as convetional abbreviation. If multiple annotated they are followed by _1 _2 etc.
+
 **EC_number**: (Enzyme Commission), classification according to Nomenclature Committee of the International Union of Biochemistry and Molecular Biology (IUBMB). [here](https://iubmb.qmul.ac.uk/) or [here](https://enzyme.expasy.org/)
 
 For example:
@@ -244,13 +248,14 @@ For example:
 - Serial number 1 → First enzyme in this category
 
 **COG**: Cluster of Ortholog classification
+
 **product**: description of the protein
 
 Many sequences identified ad CDS are not annotated, but this is normal. Annotation can be improved if providing Prokka with more extensive references than Swissprot.
 
 ### TASK 3
 
-> Nt only proteins are annotated, in Prokka output identify annotated tRNA.
+> Not only proteins are annotated: in Prokka output identify annotated tRNA.
 > How many in the 3 genome tested? 
 > What is their theoretical maxium number/How many did you expect?
 
@@ -262,12 +267,12 @@ How it works:
 input (genome, CDS or protein) -> (Optional) gene prediction (Prodigal) -> Search (diamond or mmseqs or hmmer) -> attribution to orthologous group  -> Functional annotation (emapper) with various database (KEGG, GO, pfam)
 ![eggnog](images/eggnog.png)
 
-Also this container is quite large
+Also this container is quite large, maybe use the copy in the shared folder (if any)
 ```bash 
 $ singularity pull https://depot.galaxyproject.org/singularity/eggnog-mapper:2.1.12--pyhdfd78af_0
 ```
 
-Set up folder and input file (Prodigal/Prokka .faa fasta)
+Set up folder and input file (Prodigal/Prokka .faa fasta: ouptut of the structural annotation)
 ```bash
 mkdir results/eggnog_annotation
 $ cp ./results/Nostoc_GCF_000009705.1/Nostoc.faa ./results/eggnog_annotation/
@@ -284,8 +289,8 @@ find -type f -name *.faa -exec cp {} results/eggnog_annotation/ \;
 One of the database file is large and takes long to download and unzip. If pre-downloaded elsewhere, do not download it.
 List of file and folders you will need (Diamond): eggnog.taxa.db, eggnog.taxa.db.traverse.pkl,  eggnog.db, eggnog_proteins.dmnd)
 
-Download the appropriate database (in this case we will use Diamond general db)  
-Orthologs of a certain lineage are available [here](http://eggnog5.embl.de/#/app/downloads) using taxid code (e.g. Cyanobacteria = 1117).
+Download the appropriate database  
+Orthologs from specific lineages are available [here](http://eggnog5.embl.de/#/app/downloads) , using taxid code (e.g. Cyanobacteria = 1117).
 ```bash
 $ singularity exec --bind $(pwd):/usr/local/lib/python3.11/site-packages/data eggnog-mapper\:2.1.12--pyhdfd78af_0   download_eggnog_data.py -y
 ```
@@ -295,7 +300,7 @@ Lauch the mapper
 >[!CAUTION]
 >This command is memory intensive and can run for long 
 ```bash
-$ singularity exec --bind $(pwd):/usr/local/lib/python3.11/site-packages/data eggnog-mapper\:2.1.12--pyhdfd78af_0 emapper.py --cpu 4 -i results/eggnog_annotation/Nostoc.faa --itype proteins -m hmmer --data_dir usr/people/EDVZ/ametrano/functional_annotation_db/hmmer --tax_scope 1117 --go_evidence all -o nostoc --output_dir results/eggnog_annotation/ --excel --override
+singularity exec --bind $(pwd):/usr/local/lib/python3.11/site-packages/data eggnog-mapper\:2.1.12--pyhdfd78af_0 emapper.py --cpu 8 -i results/eggnog_annotation/Nostoc.faa --itype proteins   --go_evidence all -o nostoc --output_dir results/eggnog_annotation/ --excel -d bact --tax_scope 1117 --override
 ```
 eggnog.db is the previously downloaded database (in this case the Cyanobacteria orthologs)
 
@@ -309,7 +314,7 @@ $ less -S results/eggnog_annotation/nostoc.emapper.annotations
 Hierarchic output such as those from GO term functional annotation can be represented to perform visual comparisons, for example using [Krona](https://github.com/marbl/Krona/wiki). Even if usually adopted for taxonomic data (also hierarchically organized), Krona plot can be adapted to show, for example GO frequencies 
 
 #### Krona plot visualization 
-Later on an ad-hoc container for this, but today wen will suffer a bit... 
+Installed krona and its dependencies in a dedicated conda environment (It should already exist)
 ```bash
 # create conda environment and install dependancies
 $ conda create -n krona python=3.12.2
@@ -317,11 +322,19 @@ $ conda activate krona
 $ conda install -c conda-forge python-wget=3.2
 $ conda install -c bioconda krona=2.8.1 goatools=1.2.3
 $ conda install -c conda-forge pandas=2.3.0 openpyxl=3.1.5
+```
+If "krona" conda environments is already there then...
+
+```bash
+$ conda activate krona
+```
 
 # get the GO term db
+```bash
 $ wget http://current.geneontology.org/ontology/go-basic.obo
-
+``` 
 # launch this script for each of the eggnog xlsx output files
+```bash
 $ python egg2krona_go.py ./results/eggnog_annotation/synechocystis.emapper.annotations.xlsx --obo go-basic.obo --out ./results/eggnog_annotation/krona_go_synecho.html
 ```
 
@@ -335,10 +348,10 @@ Parsing the annotation files:
 - What proteome, among the three Cyanobacteria has the highest frequency of genes that code for proteins involved in this **Biological Process**? Which of them is then a nitrogen fixer?
 - Observe how also the other two genomes has this GO term (with a much lower frequency)
 **B.**
-Verify is all these Cyanobacteria have Phycobilisomes (protein complexes containing accessory pigments)
+Verify if all these Cyanobacteria have Phycobilisomes (protein complexes containing accessory pigments)
 
-
-In addition to their descriptive use in comparative genomics (between different species/taxa), a common real-world use of these cellular function summaries is to identify differences between experimental conditions (for the same organism). The enrichment analysis of GO  terms (or pathways) performed on differentially expressed genes in transcriptomics studies, helps to summarize and reveal which parts of cellular metabolism responded to a specific condition (e.g. temperature changes, drug exposure, pollutant stress), in comparison to the control sample.
+#### 4 Enrichment analysis application: Transcriptomics
+In addition to their descriptive use in comparative genomics (between different species/taxa), a common real-world use of these cellular function summaries is to identify differences between experimental conditions (for the same organism). The enrichment analysis of GO  terms (or pathways) performed on differentially expressed genes (significantly Up or Down regulated) in transcriptomics studies, helps to summarize and reveal which parts of cellular metabolism responded to a specific condition (e.g. temperature changes, drug exposure, pollutant stress), in comparison to the control sample.
 
 Example of enrichment analysis with  [g:Profiler](https://biit.cs.ut.ee/gprofiler/gost), provide a list of differentially expressed genes, and obtain which GO and pathway are significantly enriched.
 ![gprofiler](images/gProfiler_athaliana.png)
