@@ -3,10 +3,10 @@
 - 8 identical subunits
 - try copy/paste 8 time the monomeric subunit and see if Alphafold manage to predict something similar to the original pore (the 8 subunits polymerize due to H bonds)
 #### TASK2
-- check dependancies
+- Checks dependancies
 - tRNA prediction (aragorn)
-- rRNA prediction(Barrnap)
-- CRISPR repeats (grep?)
+- rRNA prediction (Barrnap)
+- CRISPR repeats
 - Predicting CDS (Prodigal)
 - blastp for initial match wit IS (insertion sequence: bacterial mobile element) ans AMR (anti microbial resistance) databases
 - blastp for initial match with Swissprot
@@ -18,9 +18,10 @@
 #### TASK3
 
 ```bash
-$ less results/Synechocystis_GCF_000009725.1/Synechocystis.tsv | grep -E "tRNA-[A-Z][a-z][a-z]\(" 
+$ cat results/Synechocystis_GCF_000009725.1/Synechocystis.tsv | grep -E "tRNA-[A-Z][a-z][a-z]\(" 
 ```
 add | wc -l to count them
+
 Total codon  = 4^3 = 64
 Sense codon = 63 -3 stop codons = 61
 The **third base of the codon** (often called the **"wobble position"**) can pair with multiple bases in the tRNA anticodon, so less that 61 tRNA are enough!
