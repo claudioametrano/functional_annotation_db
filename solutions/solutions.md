@@ -28,23 +28,33 @@ The **third base of the codon** (often called the **"wobble position"**) can pai
 
 #### TASK4
 A.
+
 ```bash
 $ grep -c "GO:0009399" results/eggnog_annotation/*.annotations
 ```
 results/eggnog_annotation/nostoc.emapper.annotations:31
+
 results/eggnog_annotation/prochlorococcus.emapper.annotations:2
+
 results/eggnog_annotation/synechocystis.emapper.annotations:3
 
 B. *Prochlorococcus* lacks Phycobilisomes, it has indeed other adaptations to low light (not this particular strain though, which is adapted to high light) 
+
 ```bash
 $ grep -c   "Phycobilisome" results/eggnog_annotation/*.annotations
 ```
 results/eggnog_annotation/nostoc.emapper.annotations:14
+
 results/eggnog_annotation/prochlorococcus.emapper.annotations:1
+
 results/eggnog_annotation/synechocystis.emapper.annotations:13
+
 ```bash
 $ grep -c   "GO:0030089" results/eggnog_annotation/*.annotations
 ```
 results/eggnog_annotation/nostoc.emapper.annotations:25
+
 results/eggnog_annotation/prochlorococcus.emapper.annotations:2
+
 results/eggnog_annotation/synechocystis.emapper.annotations:17
+
