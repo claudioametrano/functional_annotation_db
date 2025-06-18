@@ -274,7 +274,7 @@ $ singularity pull https://depot.galaxyproject.org/singularity/eggnog-mapper:2.1
 
 Set up folder and input file (Prodigal/Prokka .faa fasta: ouptut of the structural annotation)
 ```bash
-mkdir results/eggnog_annotation
+$ mkdir results/eggnog_annotation
 $ cp ./results/Nostoc_GCF_000009705.1/Nostoc.faa ./results/eggnog_annotation/
 $ cp ./results/Synechocystis_GCF_000009725.1/Synechocystis.faa ./results/eggnog_annotation/
 $ cp ./results/Prochlorococcus_GCF_000011465.1/Prochlorococcus.faa ./results/eggnog_annotation/
