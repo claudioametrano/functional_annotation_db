@@ -218,7 +218,7 @@ To make sense of the results two things are always useful when you run complex p
 - Follow the main steps (tools adopted) of the pipeline to understand what it does to produce such outputs, see the following task... 
 
 ### TASK2 
->Looking at Prokka stdout (printed to screen, or at one of the samples's logfile) try to identify the what software the pipeline uses for different steps (structural annotation steps (CDR, tNRA, rRNA), functional annotation etc.). If there is some software you do not know, search for its manual or Github page to roughly understand its function within Prokka.
+>Looking at Prokka stdout (printed to screen, or at one of the samples's logfile) try to identify the what software the pipeline uses for different steps (structural annotation steps (CDS, tNRA, rRNA), functional annotation etc.). If there is some software you do not know, search for its manual or Github page to roughly understand its function within Prokka.
 >
 
 #### 3.2.2. Functional annotation in Prokka
