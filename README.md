@@ -323,6 +323,12 @@ $ conda install -c conda-forge python-wget=3.2
 $ conda install -c bioconda krona=2.8.1 goatools=1.2.3
 $ conda install -c conda-forge pandas=2.3.0 openpyxl=3.1.5
 ```
+
+Check if the environment exists
+```bash
+$ conda info --envs
+```
+
 If "krona" conda environments is already there then...
 
 ```bash
