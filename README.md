@@ -122,7 +122,7 @@ Try to copy/paste the sequecne into:
 >
 
 *** NOTE *** 
-> **X-ray protein crystallography**started long before computational models were available, and it is still a fundamental aid for accurate protein structure. It is a technique by which it is possible to determine the three dimensional positions of each atom in a protein. Now over 100 years old, x-ray  crystallography was first used to determine the three dimensional structures of inorganic materials, then small organic molecules, and finally macromolecules like DNA and proteins. [full text here](https://phys.libretexts.org/Courses/University_of_California_Davis/Biophysics_200A%3A_Current_Techniques_in_Biophysics/X-ray_Protein_Crystallography)
+> **X-ray protein crystallography**: existed long before computational models were available, and it is still a fundamental aid for accurate protein structure. It is a technique by which it is possible to determine the three dimensional positions of each atom in a protein. Now over 100 years old, x-ray  crystallography was first used to determine the three dimensional structures of inorganic materials, then small organic molecules, and finally macromolecules like DNA and proteins. [full text here](https://phys.libretexts.org/Courses/University_of_California_Davis/Biophysics_200A%3A_Current_Techniques_in_Biophysics/X-ray_Protein_Crystallography)
 
 ### 2. How to summarize the overwhelming amount of information of functional annotation: pathway analysis and Gene Ontology (GO) 
 
