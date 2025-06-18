@@ -106,7 +106,7 @@ Try to copy/paste the sequecne into:
 
 **EggNOG** -> Sequence search
 - Identify Orthologs in other taxa 
-- deliver a taxonomic profile of that taxa having orthologous sequences
+- deliver a taxonomic profile of taxa having that orthologous sequences
 - Functional profile that integrates GO, KEGG, and Domains (Pfam, SMART)
 
   ***NOTE***
