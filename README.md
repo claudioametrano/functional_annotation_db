@@ -300,7 +300,7 @@ Lauch the mapper
 >[!CAUTION]
 >This command is memory intensive and can run for long 
 ```bash
-singularity exec --bind $(pwd):/usr/local/lib/python3.11/site-packages/data eggnog-mapper\:2.1.12--pyhdfd78af_0 emapper.py --cpu 8 -i results/eggnog_annotation/Nostoc.faa --itype proteins   --go_evidence all -o nostoc --output_dir results/eggnog_annotation/ --excel -d bact --tax_scope 1117 --override
+singularity exec --bind $(pwd):/usr/local/lib/python3.11/site-packages/data eggnog-mapper\:2.1.12--pyhdfd78af_0 emapper.py --cpu 1 -i results/eggnog_annotation/Nostoc.faa --itype proteins   --go_evidence all -o nostoc --output_dir results/eggnog_annotation/ --excel -d bact --tax_scope 1117 --override
 ```
 eggnog.db is the previously downloaded database (in this case the Cyanobacteria orthologs)
 
