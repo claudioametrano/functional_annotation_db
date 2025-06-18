@@ -348,11 +348,14 @@ $ python egg2krona_go.py ./results/eggnog_annotation/synechocystis.emapper.annot
 
 ### TASK4
 **A naive example of GO term analysis**
+
 Parsing the annotation files:
+
 **A.** Verify if some of these Cyanobacteria is capable Nitrogen fixation:
 - Search in [QuickGO](https://www.ebi.ac.uk/QuickGO/term/GO:0009399) the **GO** term which identify "Nitrogen fixation"
 - What proteome, among the three Cyanobacteria has the highest frequency of genes that code for proteins involved in this **Biological Process**? Which of them is then a nitrogen fixer?
 - Observe how also the other two genomes has this GO term (with a much lower frequency)
+
 **B.**
 Verify if all these Cyanobacteria have Phycobilisomes (protein complexes containing accessory pigments)
 
