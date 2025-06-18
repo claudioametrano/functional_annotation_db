@@ -65,7 +65,7 @@ Many tool and database with annotated genes/genes families are available to perf
 - They do not cover necessarily the same set of genes
 - Lack of annotation for a relevant fraction of genes outside core metabolism (in non-model organisms)
 
-Despite the plethora of different accession number standards adopted by different databases, there is a good interchange among databases, which also report the accession and the classification of other relevant databases for the same protein.**
+**Despite the plethora of different accession number standards adopted by different databases, there is a good interchange among databases, which also report the accession and the classification of other relevant databases for the same protein.**
 
 ### Relevant resources
 
