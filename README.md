@@ -251,7 +251,7 @@ For example:
 
 **product**: description of the protein
 
-Many sequences identified ad CDS are not annotated, but this is normal. Annotation can be improved if providing Prokka with more extensive references than Swissprot.
+Many sequences identified ad CDS are not annotated, but this is normal. Annotation can be improved if providing Prokka with more extensive references.
 
 ### TASK 3
 
