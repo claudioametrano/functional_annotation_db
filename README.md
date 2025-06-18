@@ -110,7 +110,7 @@ Try to copy/paste the sequecne into:
 - Functional profile that integrates GO, KEGG, and Domains (Pfam, SMART)
 
   ***NOTE***
-> WHAT IS A PROTEIN DOMAN: It is a distinct part of a protein’s overall chain that often carries out a specific function. Think of > a domain as a modular “sub-unit”. It can fold into a stable 3-D structure on its own. They’re frequently swapped or duplicated
+> WHAT IS A PROTEIN DOMAN: It is a distinct part of a protein’s overall chain that often carries out a specific function. Think of a domain as a modular “sub-unit”. It can fold into a stable 3-D structure on its own. They’re frequently swapped or duplicated
  during evolution, giving rise to multi-domain proteins with new combinations of capabilities.
 
 ### TASK 1 
