@@ -82,7 +82,7 @@ Many tool and database with annotated genes/genes families are available to perf
 | **OrthoDB** v12                         | 162 M genes from 5 827 euks + 18 158 proks + 7 962 viruses         | [www.orthodb](https://www.orthodb.org)     | Ortholog groups at multiple phylogenetic depths; Supplies lineage datasets for **BUSCO**                                      |
 | **Protein Data Bank** (PBD)                 | ~240000 structures; ~1M computed structures                        | [pdb](https://www.rcsb.org/pdb/)           | Since 1971 the reference for protein structure, and one of the oldest biological DB                                           |
 | **AlphaFold**  (AlphaFold Server/API)   | > 214 M predicted 3-D structures                                   | [alphafold](https://alphafold.ebi.ac.uk)   | Structure-based; function clues for “hypothetical” proteins                                                                   |
-| Carbohydrate-Active enZYmes Database    |                                     | [Cazy](https://www.cazy.org/)   | Specialized database for enzymes that catalyze reaction involving, oligo- and polysaccharides                                      |
+| Carbohydrate-Active enZYmes Database (CAZY)    |                                     | [Cazy](https://www.cazy.org/)   | Specialized database for enzymes that catalyze reaction involving, oligo- and polysaccharides                                      |
 | **Reactome**                            | 2 742 pathways (15 492 reactions)                                  | [reactome](https://reactome.org)           | Curated pathways; human                                                                                                       |
 
 
