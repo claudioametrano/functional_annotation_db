@@ -23,7 +23,7 @@ $ cat results/Synechocystis_GCF_000009725.1/Synechocystis.tsv | grep -E "tRNA-[A
 add | wc -l to count them
 
 Total codon  = 4^3 = 64
-Sense codon = 63 -3 stop codons = 61
+Sense codon = 64 -3 stop codons = 61
 The **third base of the codon** (often called the **"wobble position"**) can pair with multiple bases in the tRNA anticodon, so less that 61 tRNA are enough!
 
 #### TASK4
