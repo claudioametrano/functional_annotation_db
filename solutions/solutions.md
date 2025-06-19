@@ -18,9 +18,8 @@
 #### TASK3
 
 ```bash
-$ grep -E "tRNA-[A-Z][a-z][a-z]\(" results/Synechocystis_GCF_000009725.1/Synechocystis.tsv
+$ grep -c -E "tRNA-[A-Z][a-z][a-z]\(" results/Synechocystis_GCF_000009725.1/Synechocystis.tsv
 ```
-add | wc -l to count them
 
 Total codon  = 4^3 = 64
 Sense codon = 64 -3 stop codons = 61
