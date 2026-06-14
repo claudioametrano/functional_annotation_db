@@ -256,7 +256,6 @@ For example:
 Many sequences identified ad CDS are not annotated, but this is normal. Annotation can be improved if providing Prokka with more extensive references.
 
 ### TASK 3
-
 > Not only proteins are annotated: in Prokka output identify annotated tRNA.
 > How many in the 3 genome tested? 
 > What is their theoretical maxium number/How many did you expect?
@@ -360,6 +359,7 @@ $ conda deactivate
 ```
 
 #### 3.5 Use GO terms  to compare genomes
+
 ### TASK4
 **A naive example of GO term analysis**
 
@@ -373,7 +373,7 @@ Parsing the annotation files:
 **B.**
 Verify if all these Cyanobacteria have Phycobilisomes (protein complexes containing accessory pigments)
 
-#### ...and Pathways representation
+#### ...and use of Pathways representation
 We will map on KEGG pathways the annotation of KEGGs found by EGGNog mapper, using an helper Python script and [KEGGcharter](https://github.com/iquasere/KEGGCharter) 
 Create a dedicated Conda environment
 ```bash
