@@ -381,11 +381,12 @@ $ conda activate keggcharter_env
 
 # Helper script that connects the EggNOG mapper output to KEGGcharter (uses KEGG API)
 # 00910 is the KEGG map for the nitrogen pathway
-# 00195 for photosynthesis
+# another example: 00195 for photosynthesis
 $ python keggcharter_from_eggnog_xlsx.py --run  --map 00910  --taxon Prochlorococcus --outdir results/eggnog_annotation/prochlorococcus_keggcharter results/eggnog_annotation/prochlorococcus.emapper.annotations.xlsx
 
 	
 ```
+Download and compare the .png KEG maps created in e.g. `results/eggnog_annotation/nostoc_keggcharter/keggcharter_maps/maps`
 
 ### 4 Enrichment analysis application: Transcriptomics
 In addition to their descriptive use in comparative genomics (between different species/taxa), a common real-world use of these cellular function summaries is to identify differences between experimental conditions (for the same organism). The enrichment analysis of GO  terms (or pathways) performed on differentially expressed genes (significantly Up or Down regulated) in transcriptomics studies, helps to summarize and reveal which parts of cellular metabolism responded to a specific condition (e.g. temperature changes, drug exposure, pollutant stress), in comparison to the control sample.
