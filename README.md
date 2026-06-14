@@ -20,7 +20,7 @@ Login to your account on the HPC remote server and start an interactive session 
 ```shell
 $ ssh username@l2.gsc1.uni-graz.at
 
-$ srun --mem=16G --ntasks=1 --cpus-per-task=4 --time=10:00:00 --pty bash
+$ srun --mem=32G --ntasks=1 --cpus-per-task=8 --time=10:00:00 --pty bash
 ```
 
 Download this repository:
@@ -50,14 +50,16 @@ In brief:
 - **functional annotation**
 - Visualization and submission
 ### What do we mean by genome annotation?
-The term **"genome annotation"** is typically used to refer to two discrete bioinformatics tasks. The first of these is structural annotation, namely the prediction of the genomic intervals comprised of functional genome features: genes, transcripts associated with those genes, the exons comprising those transcripts, and for protein-coding transcripts their coding sequences (CDS) and untranslated regions (UTRs). The second  is functional annotation, namely assigning gene symbols (names) and putative functions to the structurally identified gene models, in order to associate biological information to genes and corresponding proteins.
+The term **"genome annotation"** is typically used to refer to two discrete bioinformatics tasks. The first of these is **structural annotation**, namely the prediction of the genomic intervals comprised of functional genome features: genes, transcripts associated with those genes, the exons comprising those transcripts, and for protein-coding transcripts their coding sequences (CDS) and untranslated regions (UTRs). The second  is **functional annotation**, namely assigning gene names and putative functions to the structurally identified gene models, in order to associate biological information to genes and corresponding proteins.
 We will focus here on functional annotation, displaying relevant database and software resources to assign amino-acid sequences to a putative function.
+![func. annot.](images/gene_structure_euk.png)
+
 
 ![func. annot.](images/functional_annot.png)
 from [Del Angel et al., 2018](https://pmc.ncbi.nlm.nih.gov/articles/PMC5850084/)
 
-Some of the method are not that different from the one you applied in day 1 and 2 (e.g. BLAST),
-what makes the difference here is the completeness (in term of phylogenetic breadth) and accuracy of the annotations stored in databases, also in term of delimited orthogroups.
+Some of the method are not that different from the one you applied earlier (e.g. BLAST),
+what makes the difference here is the completeness (in term of phylogenetic breadth) and accuracy of the annotations stored in databases.
 
 ### Database and tools for functional annotation
 Many tool and database with annotated genes/genes families are available to perform functional annotation. Also many of these databases have their own integrated tool to perform annotation (e.g. EggNOG and EggNOG mapper) and web-servers for quick search, but: 
@@ -69,21 +71,21 @@ Many tool and database with annotated genes/genes families are available to perf
 
 ### Relevant resources
 
-| Database (tool)                         | Number entries                                                     | URL                                        | Notes                                                                                                                         |
-| --------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| **UniProtKB**                           | 573 230 **Swiss-Prot** (reviewed); 252 188 522 **TrEMBL** proteins | [uniprot](https://www.uniprot.org)         | Sequence records split into manually-curated and automatically annotated sets; cross-links to nearly every other DB           |
-| **InterPro** (InterProScan)             | ≈ 48 k protein signatures                                          | [interpro](https://www.ebi.ac.uk/interpro) | hmm profiles; GO terms present                                                                                                |
-| **Pfam**                                | 24 424 protein families                                            | now hosted by Interpro                     | HMM families grouped into structural “clans”                                                                                  |
-| **Cluster Of Orthologs**                | 5,050 COGs from 2,103 bacterial and 193 archaeal species           | [COG](www.ncbi.nlm.nih.gov/research/COG)   | mostly for Bacteria and Archea                                                                                                |
-| **Gene Ontology (e.g. AmiGO; BLAST2GO)**     | 185 k controlled terms (BP/MF/CC)                                  | [GO](https://geneontology.org)             | Standard vocabulary for functional enrichment; Structured ontology                                                            |
-| **KEGG** (e.g. BlastKOALA)                   | 27 663 K numbers; 580 pathway maps                                 | [kegg](https://www.genome.jp/kegg)         | Gold-standard metabolic & signaling network ;Genes grouped into KO orthologs; KO nodes populate manually drawn pathway graphs |
-| **BioCyc and MetaCyc**  | 3 153 pathways; 19 020 reactions; 19 372 metabolites               | [metacyc](https://metacyc.org)             | Metabolic pathways; metabolic modelling                                                                                       |
-| **eggNOG** (eggNOG mapper)              | 17 032 907 orthologous groups across 12 535 genomes                | [eggnog](http://eggnog5.embl.de)           | Hierarchical orthology clusters with functional tags                                                                          |
-| **OrthoDB** v12                         | 162 M genes from 5 827 euks + 18 158 proks + 7 962 viruses         | [www.orthodb](https://www.orthodb.org)     | Ortholog groups at multiple phylogenetic depths; Supplies lineage datasets for **BUSCO**                                      |
-| **Protein Data Bank** (PBD)                 | ~240000 structures; ~1M computed structures                        | [pdb](https://www.rcsb.org/pdb/)           | Since 1971 the reference for protein structure, and one of the oldest biological DB                                           |
-| **AlphaFold**  (AlphaFold Server/API)   | > 214 M predicted 3-D structures                                   | [alphafold](https://alphafold.ebi.ac.uk)   | Structure-based; function clues for “hypothetical” proteins                                                                   |
-| Carbohydrate-Active enZYmes Database (CAZY)    |                                     | [Cazy](https://www.cazy.org/)   | Specialized database for enzymes that catalyze reaction involving, oligo- and polysaccharides                                      |
-| **Reactome**                            | 2 742 pathways (15 492 reactions)                                  | [reactome](https://reactome.org)           | Curated pathways; human                                                                                                       |
+| Database (tool)                          | Number entries                                                                             | URL                                        | Notes                                                                                                                         |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| **UniProtKB**                            | 573 230 **Swiss-Prot** (reviewed) + 252 188 522 **TrEMBL** proteins (automatic annotation) | [uniprot](https://www.uniprot.org)         | Sequence records split into manually-curated and automatically annotated sets; cross-links to nearly every other DB           |
+| **InterPro** (InterProScan)              | ≈ 48 k protein signatures                                                                  | [interpro](https://www.ebi.ac.uk/interpro) | hmm profiles; GO terms present                                                                                                |
+| **Pfam**                                 | 24 424 protein families                                                                    | now hosted by Interpro                     | HMM families grouped into structural “clans”                                                                                  |
+| **Cluster Of Orthologs**                 | 5,050 COGs from 2,103 bacterial and 193 archaeal species                                   | [COG](www.ncbi.nlm.nih.gov/research/COG)   | mostly for Bacteria and Archea                                                                                                |
+| **Gene Ontology (e.g. AmiGO; BLAST2GO)** | 185 k controlled terms (BP/MF/CC)                                                          | [GO](https://geneontology.org)             | Standard vocabulary for functional enrichment; Structured ontology                                                            |
+| **KEGG** (e.g. BlastKOALA)               | 27 663 K numbers; 580 pathway maps                                                         | [kegg](https://www.genome.jp/kegg)         | Gold-standard metabolic & signaling network ;Genes grouped into KO orthologs; KO nodes populate manually drawn pathway graphs |
+| **BioCyc and MetaCyc**                   | 3 153 pathways; 19 020 reactions; 19 372 metabolites                                       | [metacyc](https://metacyc.org)             | Metabolic pathways; metabolic modelling                                                                                       |
+| **eggNOG** (eggNOG mapper)               | 17 032 907 orthologous groups across 12 535 genomes                                        | [eggnog](http://eggnog5.embl.de)           | Hierarchical orthology clusters with functional tags                                                                          |
+| **OrthoDB** v12                          | 162 M genes from 5 827 euks + 18 158 proks + 7 962 viruses                                 | [www.orthodb](https://www.orthodb.org)     | Ortholog groups at multiple phylogenetic depths; Supplies lineage datasets for **BUSCO**                                      |
+| **Protein Data Bank** (PBD)              | ~240000 structures; ~1M computed structures                                                | [pdb](https://www.rcsb.org/pdb/)           | Since 1971 the reference for protein structure, and one of the oldest biological DB                                           |
+| **AlphaFold**  (AlphaFold Server/API)    | > 214 M predicted 3-D structures                                                           | [alphafold](https://alphafold.ebi.ac.uk)   | Structure-based; function clues for “hypothetical” proteins                                                                   |
+| **Carbohydrate-Active enZYmes** (CAZY)   |                                                                                            | [Cazy](https://www.cazy.org/)              | Specialized database for enzymes that catalyze reaction involving, oligo- and polysaccharides                                 |
+| **Reactome**                             | 2 742 pathways (15 492 reactions)                                                          | [reactome](https://reactome.org)           | Curated pathways; human                                                                                                       |
 
 
 ![aa](images/aa.png)
@@ -110,7 +112,7 @@ Try to copy/paste the sequecne into:
 - Functional profile that integrates GO, KEGG, and Domains (Pfam, SMART)
 
   ***NOTE***
-> WHAT IS A PROTEIN DOMAN: It is a distinct part of a protein’s overall chain that often carries out a specific function. Think of a domain as a modular “sub-unit”. It can fold > into a stable 3-D structure on its own. They’re frequently swapped or duplicated
+> **PROTEIN DOMAIN**: It is a distinct part of a protein’s overall chain that often carries out a specific function. Think of a domain as a modular “sub-unit”. It can fold > into a stable 3-D structure on its own. They’re frequently swapped or duplicated ("recycled")
 > during evolution, giving rise to multi-domain proteins with new combinations of capabilities.
 
 ### TASK 1 
@@ -124,7 +126,7 @@ Try to copy/paste the sequecne into:
 **NOTE** 
 > **X-ray protein crystallography**: existed long before computational models were available, and it is still a fundamental aid for accurate protein structure. It is a technique by which it is possible to determine the three dimensional positions of each atom in a protein. Now over 100 years old, x-ray  crystallography was first used to determine the three dimensional structures of inorganic materials, then small organic molecules, and finally macromolecules like DNA and proteins. [full text here](https://phys.libretexts.org/Courses/University_of_California_Davis/Biophysics_200A%3A_Current_Techniques_in_Biophysics/X-ray_Protein_Crystallography)
 
-### 2. How to summarize the overwhelming amount of information of functional annotation: pathway analysis and Gene Ontology (GO) 
+### 2. How to summarize the overwhelming amount of information of functional annotation?: pathway analysis and Gene Ontology (GO) 
 
 #### 2.1 Pathway analysis 
 To understand how genes and molecules (gene products and metabolites) are networked to describe a known biological phenotype.
@@ -185,7 +187,7 @@ Why Cyanobacteria:
 #### 3.1 Assembly download (Already available in `data/`)
 ```bash
 $ singularity pull https://depot.galaxyproject.org/singularity/ncbi-datasets-cli:14.26.0
-$ singularity exec ncbi-datasets-cli:14.26.0 datasets download genome accession GCF_000009725.1 GCF_000011465.1 GCF_000009705.1 --include genome
+$ singularity exec -B $(pwd) ncbi-datasets-cli:14.26.0 datasets download genome accession GCF_000009725.1 GCF_000011465.1 GCF_000009705.1 --include genome
 ```
 or
 
@@ -205,7 +207,7 @@ $ singularity pull https://depot.galaxyproject.org/singularity/prokka:1.14.6--pl
 ```
 
 ```bash
-$ singularity exec prokka\:1.14.6--pl5321hdfd78af_5 prokka --outdir results/Synechocystis_GCF_000009725.1 --prefix Synechocystis --cpu 1 ./data/GCF_000009725.1_ASM972v1_genomic.fna 
+$ singularity exec -B $(pwd) prokka\:1.14.6--pl5321hdfd78af_5 prokka --outdir results/Synechocystis_GCF_000009725.1 --prefix Synechocystis --cpu 8 ./data/GCF_000009725.1_ASM972v1_genomic.fna 
 ```
 
 run the same for the other two samples (adjust names!) ...**or loop**, as manual repeated steps are prone to mistakes! NO big deal with three samples though.
@@ -218,7 +220,7 @@ To make sense of the results two things are always useful when you run complex p
 - Follow the main steps (tools adopted) of the pipeline to understand what it does to produce such outputs, see the following task... 
 
 ### TASK2 
->Looking at Prokka stdout (printed to screen, or at one of the samples's logfile) try to identify the what software the pipeline uses for different steps (structural annotation steps (CDS, tNRA, rRNA), functional annotation etc.). If there is some software you do not know, search for its manual or Github page to roughly understand its function within Prokka.
+>Looking at Prokka stdout (printed to screen, or at one of the samples's logfile) try to identify the what software the pipeline uses for different steps of structural (CDS, tNRA, rRNA), and functional annotation steps. If there is some software you do not know, search for its manual or Github page to understand its function within Prokka.
 >
 
 #### 3.2.2. Functional annotation in Prokka
@@ -232,7 +234,7 @@ $ less results/Synechocystis_GCF_000009725.1/Synechocystis.tsv
 
 **lenghth_bp**
 
-**gene**: gene name as convetional abbreviation. If multiple annotated they are followed by _1 _2 etc.
+**gene**: gene name as conventional abbreviation. If multiple annotated they are followed by _1 _2 etc.
 
 **EC_number**: (Enzyme Commission), classification according to Nomenclature Committee of the International Union of Biochemistry and Molecular Biology (IUBMB). [here](https://iubmb.qmul.ac.uk/) or [here](https://enzyme.expasy.org/)
 
@@ -261,23 +263,23 @@ Many sequences identified ad CDS are not annotated, but this is normal. Annotati
 
 #### 3.3 Functional annotation with EggNOG mapper
 Prokka provide some basic, mostly bacterial-oriented, functional annotation, let's try to complete the annotation with the support of EggNOG mapper and its database.
-**EggNOG-mapper** is a tool for fast functional annotation of novel sequences, being based on orthology predictions it should permits a higher precision than traditional homology searches (i.e. BLAST searches), avoiding transferring annotations from paralogs.
+**EggNOG-mapper** is a tool for fast functional annotation of novel sequences, based on orthology predictions, it should permits a higher precision than traditional homology searches (i.e. BLAST searches), avoiding transferring annotations from paralogs. However this orthology oriented assignation comes to a cost: several gene families mey not have a correspondence to EggNOG orthogroups, so the reference to other datadases (e.g. GO, pfam) is often richer in missing data that the one obtaineb using directly that database.
 
 How it works:
 input (genome, CDS or protein) -> (Optional) gene prediction (Prodigal) -> Search (diamond or mmseqs or hmmer) -> attribution to orthologous group  -> Functional annotation (emapper) with various database (KEGG, GO, pfam)
 ![eggnog](images/eggnog.png)
 
-Also this container is quite large, maybe use the copy in the shared folder (if any)
+>[!CAUTION]
+>This container is quite large (350 Mb), maybe use the copy in the shared folder (if any)
 ```bash 
-$ singularity pull https://depot.galaxyproject.org/singularity/eggnog-mapper:2.1.12--pyhdfd78af_0
+$ singularity pull eggnog-mapper_2.1.13 \
+  docker://quay.io/biocontainers/eggnog-mapper:2.1.13--pyhdfd78af_2
 ```
 
 Set up folder and input file (Prodigal/Prokka .faa fasta: ouptut of the structural annotation)
 ```bash
 $ mkdir results/eggnog_annotation
-$ cp ./results/Nostoc_GCF_000009705.1/Nostoc.faa ./results/eggnog_annotation/
-$ cp ./results/Synechocystis_GCF_000009725.1/Synechocystis.faa ./results/eggnog_annotation/
-$ cp ./results/Prochlorococcus_GCF_000011465.1/Prochlorococcus.faa ./results/eggnog_annotation/
+$ cp ./results/Nostoc_GCF_000009705.1/Nostoc.faa  ./results/Synechocystis_GCF_000009725.1/Synechocystis.faa ./results/Prochlorococcus_GCF_000011465.1/Prochlorococcus.faa ./results/eggnog_annotation/
 ```
 ...or use the convenient command `find`
 ```bash
@@ -285,24 +287,33 @@ find -type f -name *.faa -exec cp {} results/eggnog_annotation/ \;
 ```
 
 
->[!CAUTION]
-One of the database file is large and takes long to download and unzip. If pre-downloaded elsewhere, do not download it.
-List of file and folders you will need (Diamond): eggnog.taxa.db, eggnog.taxa.db.traverse.pkl,  eggnog.db, eggnog_proteins.dmnd)
+Download the appropriate database (manually as the dedicated download_eggnog_data.py script does not work with this EggNOG version )  
+Orthologs from specific lineages are available [here](http://eggnog5.embl.de/#/app/downloads) , using taxid code (e.g. Cyanobacteria = 1117) here the general DIAMOND db will be downloaded (HMMER, MMSeq also available as methods, Pfam as database).
 
-Download the appropriate database  
-Orthologs from specific lineages are available [here](http://eggnog5.embl.de/#/app/downloads) , using taxid code (e.g. Cyanobacteria = 1117).
-```bash
-$ singularity exec --bind $(pwd):/usr/local/lib/python3.11/site-packages/data eggnog-mapper\:2.1.12--pyhdfd78af_0   download_eggnog_data.py -y
-```
-the folder /usr/local/... is linked to our working directory because the script need to put the database there (it will show up in our current directory). `-y` skips the interactive question answering yes to all, so we can run `singularity exec` effectively
-
-Lauch the mapper
 >[!CAUTION]
->This command is memory intensive and can run for long 
+Database files are large (several Gb) and takes long to download and unzip. If pre-downloaded elsewhere, do not download them.
+List of files you will need (Diamond): eggnog.taxa.db, eggnog.taxa.db.traverse.pkl,  eggnog.db, eggnog_proteins.dmnd)
 ```bash
-singularity exec --bind $(pwd):/usr/local/lib/python3.11/site-packages/data eggnog-mapper\:2.1.12--pyhdfd78af_0 emapper.py --cpu 1 -i results/eggnog_annotation/Nostoc.faa --itype proteins   --go_evidence all -o nostoc --output_dir results/eggnog_annotation/ --excel -d bact --tax_scope 1117 --override
+$ mkdir eggnog_db
+$ cd eggnog_db
+$ wget -c http://eggnog5.embl.de/download/emapperdb-5.0.2/eggnog.db.gz
+$ wget -c http://eggnog5.embl.de/download/emapperdb-5.0.2/eggnog.taxa.tar.gz
+$ wget -c http://eggnog5.embl.de/download/emapperdb-5.0.2/eggnog_proteins.dmnd.gz
+
+$ tar -xvzf eggnog.taxa.tar.gz
+$ gunzip eggnog.db.gz
+$ gunzip eggnog_proteins.dmnd.gz
+
+$ cd ..
 ```
-eggnog.db is the previously downloaded database (in this case the Cyanobacteria orthologs)
+
+
+Lauch the mapper for every protein files 
+>[!CAUTION]
+>This command can run for long (here ~8 min on Nostoc proteins on 8 cores of AMD EPYC 9554) 
+```bash
+$ singularity exec --bind $(pwd) eggnog-mapper_2.1.13 emapper.py --cpu 8 --data_dir eggnog_db -i results/eggnog_annotation/Nostoc.faa --itype proteins   --go_evidence all -o nostoc --output_dir results/eggnog_annotation/ --excel --tax_scope 1117 --override
+```
 
 EggNOG output:  emapper.annotations, emapper.hits, emapper.seed_orthologs
 (optionally annotation also in .xlsx)
@@ -314,14 +325,16 @@ $ less -S results/eggnog_annotation/nostoc.emapper.annotations
 Hierarchic output such as those from GO term functional annotation can be represented to perform visual comparisons, for example using [Krona](https://github.com/marbl/Krona/wiki). Even if usually adopted for taxonomic data (also hierarchically organized), Krona plot can be adapted to show, for example GO frequencies 
 
 #### Krona plot visualization 
-Installed krona and its dependencies in a dedicated conda environment (It should already exist)
+Install Miniconda if not present
 ```bash
-# create conda environment and install dependancies
-$ conda create -n krona python=3.12.2
-$ conda activate krona
-$ conda install -c conda-forge python-wget=3.2
-$ conda install -c bioconda krona=2.8.1 goatools=1.2.3
-$ conda install -c conda-forge pandas=2.3.0 openpyxl=3.1.5
+$ cd ~  
+$ wget https://repo.anaconda.com/miniconda/Miniconda3-py310_26.1.1-1-Linux-x86_64.sh
+$ bash Miniconda3-py310_26.1.1-1-Linux-x86_64.sh
+```
+Install krona and its dependencies in a dedicated conda environment (conda 26.1.1)
+```bash
+# create a conda environment and install dependancies with a yaml file
+$ conda env create -f krona_env.yaml
 ```
 
 Check if the environment exists
@@ -342,10 +355,11 @@ $ wget http://current.geneontology.org/ontology/go-basic.obo
 Launch this script for each of the eggnog xlsx output files
 ```bash
 $ python egg2krona_go.py ./results/eggnog_annotation/synechocystis.emapper.annotations.xlsx --obo go-basic.obo --out ./results/eggnog_annotation/krona_go_synecho.html
+# run this for all 3 eggnog outputs .xlsx files
+$ conda deactivate
 ```
 
-#### 3.5 Use GO and pathways
-
+#### 3.5 Use GO terms  to compare genomes
 ### TASK4
 **A naive example of GO term analysis**
 
@@ -359,8 +373,22 @@ Parsing the annotation files:
 **B.**
 Verify if all these Cyanobacteria have Phycobilisomes (protein complexes containing accessory pigments)
 
+#### ...and Pathways!
+Create a dedicated Conda environment
+```bash
+$ conda env create -f keggcharter_env.yaml 
+$ conda activate keggcharter_env
+
+# Helper script that connects the EggNOG mapper output to KEGGcharter (uses KEGG API)
+# 00910 is the KEGG map for the nitrogen pathway
+# 00195 for photosynthesis
+$ python keggcharter_from_eggnog_xlsx.py --run  --map 00910  --taxon Prochlorococcus --outdir results/eggnog_annotation/prochlorococcus_keggcharter results/eggnog_annotation/prochlorococcus.emapper.annotations.xlsx
+
+	
+```
+
 ### 4 Enrichment analysis application: Transcriptomics
 In addition to their descriptive use in comparative genomics (between different species/taxa), a common real-world use of these cellular function summaries is to identify differences between experimental conditions (for the same organism). The enrichment analysis of GO  terms (or pathways) performed on differentially expressed genes (significantly Up or Down regulated) in transcriptomics studies, helps to summarize and reveal which parts of cellular metabolism responded to a specific condition (e.g. temperature changes, drug exposure, pollutant stress), in comparison to the control sample.
 
-Example of enrichment analysis with  [g:Profiler](https://biit.cs.ut.ee/gprofiler/gost), provide a list of differentially expressed genes, and obtain which GO and pathway are significantly enriched.
+Example of enrichment analysis with  [gProfiler](https://biit.cs.ut.ee/gprofiler/gost), provide a list of differentially expressed genes, and obtain which GO and pathway are significantly enriched.
 ![gprofiler](images/gProfiler_athaliana.png)

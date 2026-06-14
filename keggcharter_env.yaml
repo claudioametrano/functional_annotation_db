@@ -1,0 +1,9 @@
+name: keggcharter_env
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.10
+  - keggcharter=1.1.2
+  - pandas=2.2.*
+  - openpyxl=3.1.*
