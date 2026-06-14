@@ -91,6 +91,7 @@ Many tool and database with annotated genes/genes families are available to perf
 ![aa](images/aa.png)
 from [here](https://www.compoundchem.com/2014/09/16/aminoacids/)
 
+## Hands-on session
 ### 1. Wandering through databases 
 Let's try some of the annotation resources with this not yet annotated protein that could be one of the output of our structural annotation workflow
 
@@ -133,7 +134,7 @@ To understand how genes and molecules (gene products and metabolites) are networ
 - Reduces complexity of information (from thousands of genes to hundreds of pathways).
 - Pathway enrichment analysis, which generates a list of over-represented pathways in a gene list.
 
-##### ** KEGG pathways: Kyoto Encycplopedia of Genes and Genomes**
+#####  KEGG pathways: Kyoto Encycplopedia of Genes and Genomes
 Collection of manually curated pathways maps, includes relation among:
 Genes, proteins (enzymes, ...), Compounds (substrates), pathways (what pathways are connected to this particular gene?)
 Includes information about:
@@ -323,14 +324,14 @@ $ less -S results/eggnog_annotation/nostoc.emapper.annotations
 #### 3.4 Visualize and summarize results
 Hierarchic output such as those from GO term functional annotation can be represented to perform visual comparisons, for example using [Krona](https://github.com/marbl/Krona/wiki). Even if usually adopted for taxonomic data (also hierarchically organized), Krona plot can be adapted to show, for example GO frequencies 
 
-#### Krona plot visualization 
+##### Krona plot visualization 
 Install Miniconda if not present
 ```bash
 $ cd ~  
 $ wget https://repo.anaconda.com/miniconda/Miniconda3-py310_26.1.1-1-Linux-x86_64.sh
 $ bash Miniconda3-py310_26.1.1-1-Linux-x86_64.sh
 ```
-Install krona and its dependencies in a dedicated conda environment (conda 26.1.1)
+Install krona and its dependencies in a conda environment (conda 26.1.1)
 ```bash
 # create a conda environment and install dependancies with a yaml file
 $ conda env create -f krona_env.yaml
@@ -360,7 +361,7 @@ $ conda deactivate
 
 #### 3.5 Use GO terms  to compare genomes
 ### TASK4
-**A naive example of GO term analysis**
+##### A naive example of GO term analysis
 Parsing the annotation files:
 **A.** Verify if some of these Cyanobacteria is capable Nitrogen fixation:
 - Search in [QuickGO](https://www.ebi.ac.uk/QuickGO/term/GO:0009399) the **GO** term which identify "Nitrogen fixation"
