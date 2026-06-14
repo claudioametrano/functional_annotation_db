@@ -31252,7 +31252,7 @@ results/Nostoc_GCF_000009705.1/Nostoc:NC_003241.1_7 (length 42)
 results/Nostoc_GCF_000009705.1/Nostoc:NC_003241.1_8 (length 390)
 results/Nostoc_GCF_000009705.1/Nostoc:NC_003241.1_9 (length 101)
 
-FATAL: DiscRep_ALL:RRNA_NAME_CONFLICTS::2 rRNA product names are not standard. Correct the names to the standard format, eg "16S ribosomal RNA"
+FATAL: DiscRep_ALL:RRNA_NAME_CONFLICTS::2 rRNA product names are not standard. Correct ts to the standard format,format, eg "16S ribosomal RNA"
 results/Nostoc_GCF_000009705.1/Nostoc:rRNA	23S ribosomal RNA (partial)	NC_003272.1:2377738-2378938	IMAGBKIO_02019
 results/Nostoc_GCF_000009705.1/Nostoc:rRNA	23S ribosomal RNA (partial)	NC_003272.1:2380397-2382032	IMAGBKIO_02021
 

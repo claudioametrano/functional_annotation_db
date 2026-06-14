@@ -385,6 +385,7 @@ Run KEGGcharter using the script:
 
 $ python keggcharter_from_eggnog_xlsx.py --run  --map 00910  --taxon Prochlorococcus --outdir results/eggnog_annotation/prochlorococcus_keggcharter results/eggnog_annotation/prochlorococcus.emapper.annotations.xlsx
 
+$ conda deactivate
 ```
 Download and compare the .png KEGG maps created in e.g. `results/eggnog_annotation/nostoc_keggcharter/keggcharter_maps/maps`
 

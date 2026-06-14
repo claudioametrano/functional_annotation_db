@@ -1,4 +1,4 @@
-LOCUS       NC_003272.1          6413771 bp    DNA     linear       13-JUN-2025
+LOCUS       NC_003272.1          6413771 bp    DNA     linear       13-JUN-2026
 DEFINITION  Genus species strain strain.
 ACCESSION   
 VERSION
@@ -181435,7 +181435,7 @@ ORIGIN
   6413701 attgctggat tatctctact taataatagg agaaataaag gaagagctaa aaggaaccag
   6413761 tatggcgaaa a
 //
-LOCUS       NC_003276.1           408101 bp    DNA     linear       13-JUN-2025
+LOCUS       NC_003276.1           408101 bp    DNA     linear       13-JUN-2026
 DEFINITION  Genus species strain strain.
 ACCESSION   
 VERSION
@@ -193043,7 +193043,7 @@ ORIGIN
    408001 ggaaaaacct tccattcttg ttcagtacgc cgtattacct caacatgagc ttgaatcatc
    408061 aaccagacac aaagcgcaaa tttatcaccg tcataaccgg a
 //
-LOCUS       NC_003240.1           186614 bp    DNA     linear       13-JUN-2025
+LOCUS       NC_003240.1           186614 bp    DNA     linear       13-JUN-2026
 DEFINITION  Genus species strain strain.
 ACCESSION   
 VERSION
@@ -198498,7 +198498,7 @@ ORIGIN
    186541 tcagcccaga ccatgctaac aaagtcgcca tactgtctac atctggtcgt ctaccttgcg
    186601 cgatccgagt caag
 //
-LOCUS       NC_003273.1            55414 bp    DNA     linear       13-JUN-2025
+LOCUS       NC_003273.1            55414 bp    DNA     linear       13-JUN-2026
 DEFINITION  Genus species strain strain.
 ACCESSION   
 VERSION
@@ -200262,7 +200262,7 @@ ORIGIN
     55321 aagaaaaaag ttagaggatt acgagacatt gaacgtagtg ttaccaatga aactcaggaa
     55381 atggcaacta ttatcgaaga ttattgctcg gcag
 //
-LOCUS       NC_003270.1            40340 bp    DNA     linear       13-JUN-2025
+LOCUS       NC_003270.1            40340 bp    DNA     linear       13-JUN-2026
 DEFINITION  Genus species strain strain.
 ACCESSION   
 VERSION
@@ -201365,7 +201365,7 @@ ORIGIN
     40261 tcacagttac aaacagcaga cattttgcac ctaaataccg gattcctcta caaaatgtct
     40321 ggtattctgc acagcttata
 //
-LOCUS       NC_003267.1           101965 bp    DNA     linear       13-JUN-2025
+LOCUS       NC_003267.1           101965 bp    DNA     linear       13-JUN-2026
 DEFINITION  Genus species strain strain.
 ACCESSION   
 VERSION
@@ -204193,7 +204193,7 @@ ORIGIN
    101881 ctgggttgaa gtttaaagaa accgcctgga gggcttggac tccgccagga taagttacac
    101941 tcaagcactc aagctgaatc atcat
 //
-LOCUS       NC_003241.1             5584 bp    DNA     linear       13-JUN-2025
+LOCUS       NC_003241.1             5584 bp    DNA     linear       13-JUN-2026
 DEFINITION  Genus species strain strain.
 ACCESSION   
 VERSION
