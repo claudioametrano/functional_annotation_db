@@ -373,20 +373,22 @@ Parsing the annotation files:
 **B.**
 Verify if all these Cyanobacteria have Phycobilisomes (protein complexes containing accessory pigments)
 
-#### ...and Pathways!
+#### ...and Pathways representation
+We will map on KEGG pathways the annotation of KEGGs found by EGGNog mapper, using an helper Python script and [KEGGcharter](https://github.com/iquasere/KEGGCharter) 
 Create a dedicated Conda environment
 ```bash
 $ conda env create -f keggcharter_env.yaml 
 $ conda activate keggcharter_env
-
+```
+Run KEGGcharter using the script:
+--map is the argument to pick the map code for a pathway (e.g. 00910 is the KEGG map for the nitrogen pathways, 00195 for photosynthesis)
+```bash
 # Helper script that connects the EggNOG mapper output to KEGGcharter (uses KEGG API)
-# 00910 is the KEGG map for the nitrogen pathway
-# another example: 00195 for photosynthesis
+
 $ python keggcharter_from_eggnog_xlsx.py --run  --map 00910  --taxon Prochlorococcus --outdir results/eggnog_annotation/prochlorococcus_keggcharter results/eggnog_annotation/prochlorococcus.emapper.annotations.xlsx
 
-	
 ```
-Download and compare the .png KEG maps created in e.g. `results/eggnog_annotation/nostoc_keggcharter/keggcharter_maps/maps`
+Download and compare the .png KEGG maps created in e.g. `results/eggnog_annotation/nostoc_keggcharter/keggcharter_maps/maps`
 
 ### 4 Enrichment analysis application: Transcriptomics
 In addition to their descriptive use in comparative genomics (between different species/taxa), a common real-world use of these cellular function summaries is to identify differences between experimental conditions (for the same organism). The enrichment analysis of GO  terms (or pathways) performed on differentially expressed genes (significantly Up or Down regulated) in transcriptomics studies, helps to summarize and reveal which parts of cellular metabolism responded to a specific condition (e.g. temperature changes, drug exposure, pollutant stress), in comparison to the control sample.
